@@ -125,10 +125,10 @@ export function SidebarDefault() {
 
           <button
             onClick={() => handleLogout()}
-            className="md:hidden flex items-center w-full gap-4 py-3 px-3 rounded-md hover:bg-slate-900 hover:bg-opacity-30 mt-4"
+            className="md:hidden flex items-center w-full gap-4 py-3 px-3 rounded-md hover:bg-primary-main hover:text-white mt-4"
           >
             <div className="">
-              <PiSignOutBold size={24} color="#fff" />
+              <PiSignOutBold size={24} color="" />
             </div>
             <h4 className="uppercase text-[10px] font-bold">Log Out</h4>
           </button>
@@ -137,14 +137,12 @@ export function SidebarDefault() {
         <div className="md:flex hidden">
           <button
             onClick={() => handleLogout()}
-            className="flex items-center w-full gap-4 py-3 px-3 rounded-md hover:bg-slate-900 hover:bg-opacity-30"
+            className="flex items-center w-full gap-4 py-3 px-3 rounded-md hover:bg-primary-main hover:text-white "
           >
             <div className="">
-              <PiSignOutBold size={24} color="#fff" />
+              <PiSignOutBold size={24} color="" />
             </div>
-            <h4 className="uppercase text-[10px] font-bold text-white">
-              Log Out
-            </h4>
+            <h4 className="uppercase text-[10px] font-bold">Log Out</h4>
           </button>
         </div>
       </div>
