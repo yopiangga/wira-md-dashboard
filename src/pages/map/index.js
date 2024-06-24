@@ -32,13 +32,10 @@ export function MapPage() {
   return (
     <div className="col-span-12">
       <MapContainer
-        center={[-6.175392, 106.827153]}
+        center={[-7.2769113, 112.7939166]}
         zoom={13}
         scrollWheelZoom={false}
-        style={{
-          height: "500px",
-          width: "100%",
-        }}
+        className="w-full h-[calc(100vh-4rem)]"
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

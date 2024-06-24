@@ -7,27 +7,43 @@ import { StatisticServices } from "src/services/StatisticServices";
 
 export function HomeOperatorPage() {
   const [data, setData] = useState({});
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const statisticServices = new StatisticServices();
 
   useEffect(() => {
-    fetch()
+    fetch();
   }, []);
 
   async function fetch() {
-    const res = await statisticServices.getStatisticByOperator(
-      { idHospital: user.idHospital }
-    );
+    const res = await statisticServices.getStatisticByOperator({
+      idHospital: user.idHospital,
+    });
     setData(res?.data);
   }
 
   return (
     <div className="col-span-12 grid lg:grid-cols-5 grid-cols-2 gap-3">
       {/* <Card title="Total Hospital" icon={<FaHospital />} value="10" /> */}
-      <Card title="Total Patient" icon={<FaUsers />} value={data?.totalPatient ?? "-"} />
-      <Card title="Total Diagnosed" icon={<FaUsers />} value={data?.totalDiagnosed ?? "-"} />
-      <Card title="Total Undiagnosed" icon={<FaUsers />} value={data?.totalUndiagnosed ?? "-"} />
-      <Card title="Total Medical Record" icon={<FaDatabase />} value={data?.totalMedicalRecord ?? "-"} />
+      <Card
+        title="Total Patient"
+        icon={<FaUsers />}
+        value={data?.totalPatient ?? "-"}
+      />
+      <Card
+        title="Total Diagnosed"
+        icon={<FaUsers />}
+        value={data?.totalDiagnosed ?? "-"}
+      />
+      <Card
+        title="Total Undiagnosed"
+        icon={<FaUsers />}
+        value={data?.totalUnDiagnosed ?? "-"}
+      />
+      <Card
+        title="Total Medical Record"
+        icon={<FaDatabase />}
+        value={data?.totalMedicalRecord ?? "-"}
+      />
       {/* <Card title="Total User" icon={<FaUsers />} value="10" /> */}
     </div>
   );
