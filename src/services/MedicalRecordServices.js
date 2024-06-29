@@ -28,6 +28,21 @@ export class MedicalRecordServices {
     }
   }
 
+  async getDistanceMedicalRecord({ latitude, longitude }) {
+    try {
+      const response = await axios.get(
+        `${baseUrl}/medical-records/distance/${latitude}/${longitude}`,
+        {
+          headers,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      handleAxiosError(error);
+      handleOtherStatusCodes(error);
+    }
+  }
+
   async createMedicalRecord({ idPatient, image, description }) {
     const formData = new FormData();
     formData.append("idPatient", idPatient);
