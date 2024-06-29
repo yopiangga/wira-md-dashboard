@@ -15,10 +15,10 @@ export function MedicalRecordPage() {
     { code: "id", name: "ID" },
     { code: "patient", name: "Patient Name" },
     { code: "image", name: "Image", type: "image" },
-    { code: "diagnosisAI", name: "Diagnosis AI" },
+    // { code: "diagnosisAI", name: "Diagnosis AI" },
     { code: "diagnosisDoctor", name: "Diagnosis Doctor" },
     { code: "description", name: "Description" },
-    { code: "diagnoseTime", name: "Diagnose Time" },
+    { code: "diagnosisTime", name: "Diagnose Time" },
     { code: "doctor", name: "Doctor Name" },
     { code: "operator", name: "Operator Name" },
     { code: "hospital", name: "Hospital Name" },
@@ -33,7 +33,14 @@ export function MedicalRecordPage() {
     const res = await medicalRecordServices.getMedicalRecords();
 
     if (res) {
-      setData(res.data);
+      const temp = res.data.map((item) => {
+        return {
+          ...item,
+          diagnosisTime: item.diagnosisTime != null ? new Date(item.diagnosisTime).toLocaleString() : "-",
+        };
+      });
+
+      setData(temp);
     }
   }
 
