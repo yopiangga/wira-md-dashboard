@@ -113,8 +113,19 @@ export function MapPage() {
       <div className="grid grid-cols-12 gap-3 w-full mb-4">
       <div className="col-span-3">
         <div className="flex items-center gap-2 mb-2">
-        <InputDefault label="Latitude" className="" onChange={() => {}} readonly={true} value={position.latitude} />
-        <InputDefault label="Longitude" className="" onChange={() => {}} readonly={true} value={position.longitude} />
+        <InputDefault label="Latitude" className="" handleChange={(e) => {
+          setPosition({
+            ...position,
+            latitude: e.target.value
+          })
+        }} value={position.latitude} />
+        <InputDefault label="Longitude" className="" handleChange={(e) => {
+          setPosition({
+            ...position,
+            longitude: e.target.value
+          })
+          fetchMedicalRecord()
+        }} value={position.longitude} />
         </div>
         <Range step={10} onChange={(e) => {
           const temp = parseInt(e.target.value) * 10
