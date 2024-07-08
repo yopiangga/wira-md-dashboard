@@ -24,7 +24,7 @@ module.exports = {
           1000: "#0A0A0A",
         },
         primary: {
-          main: "#f97316",
+          main: "#6B4EFF",
           surface: "#fb923c",
           border: "#ea580c",
         },

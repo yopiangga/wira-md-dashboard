@@ -91,7 +91,7 @@ export function SidebarDefault() {
         <div className="mb-4 w-full flex gap-2 items-center px-3">
           <FiLifeBuoy size={28} color="#fff" />
           <h2 className="f-h4">
-            WIRA<span className="text-primary-main">MD</span>
+            Prisma<span className="text-primary-main">LAB</span>
           </h2>
         </div>
 

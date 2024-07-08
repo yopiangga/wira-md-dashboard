@@ -135,7 +135,7 @@ export function SignInPage() {
         <div className="flex justify-end w-11/12">
           {/* <img src={imageLogo} /> */}
           <h1 className="f-h1 text-white">
-            - Wira<span className="text-primary-main">MD</span> -
+            - Prisma<span className="text-primary-main">LAB</span> -
           </h1>
         </div>
         <br />
